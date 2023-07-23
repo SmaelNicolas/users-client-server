@@ -1,9 +1,11 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 const PORT = process.env.port || 3001;
 
 const routerUsers = require("./routers/users/index.js");
 
+app.use(cors());
 app.use("/api/users", routerUsers);
 
 // HOME
